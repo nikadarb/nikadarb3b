@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <title>Задание</title>
+</head>
+<body>
+<h1>Форма</h1>
+  <form action="index.php" method="POST">
+    <label>
+      Имя:
+      <br>
+      <input name="name" placeholder="Введите ваше имя" />
+    </label><br>
+    <label>
+      E-mail:
+      <br />
+      <input name="email" type="email" placeholder="Введите вашу почту" />
+    </label>
+    <br />
+    <label>
+      Дата рождения:
+      <br />
+      <select name="year" id="yearB"></select>
+    </label>
+    <br />
+    <label>
+      Ваш пол:
+      <br />
+      <input type="radio" name="radio-1" value="male" checked />
+      Мужской
+    </label>
+    <label>
+      <input type="radio" name="radio-1" value="female" />
+      Женский
+    </label>
+    <br />
+    <label>
+      Количество конечностей:
+      <br />
+      <input type="radio" name="radio-2" value="1" checked />
+      1
+    </label>
+    <br />
+    <label>
+      <input type="radio" name="radio-2" value="2" />
+      2
+    </label>
+    <br />
+    <label>
+      <input type="radio" name="radio-2" value="3" />
+      3
+    </label>
+    <br />
+    <label>
+      <input type="radio" name="radio-2" value="4" />
+      4
+    </label>
+    <br />
+    <label>
+      <select name="super" multiple="multiple">
+        <option value="bessmert" selected>Бессмертие</option>
+        <option value="skvozsten">Прохождение сквозь стены</option>
+        <option value="levitacia">Левитация</option>
+      </select>
+    </label>
+    <br />
+    <label id="some">
+      Биография:
+      <br />
+      <textarea name="bio" placeholder="Text here"></textarea>
+    </label>
+    <br />
+    <label>
+      <input type="checkbox" name="check1" checked />
+      с контрактом ознакомлен (а)
+    </label>
+    <br />
+    <input type="submit" value="Отправить" />
+  </form>
+  <script type="text/javascript">
+    window.onload = function () {
+    var yearB = document.getElementById("yearB");
+    var currentYear = (new Date()).getFullYear();
+    for (var i = 1950; i <= currentYear; i++) {
+        var option = document.createElement("OPTION");
+        option.innerHTML = i;
+        option.value = i;
+        yearB.appendChild(option);
+    }
+        };
+</script>
+</body>
+</html>
